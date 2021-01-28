@@ -60,18 +60,18 @@ pipeline {
     }
 
   stage('Deplo to Dev'){
-  when {
-beforeAgent true
-branch 'master'
-}
+    when {
+      beforeAgent true
+      branch 'master'
+      }
 
-agent any
+    agent any
 
-steps {
-echo 'Deploying to Dev Environment with Docker Compose'
-sh 'docker-compose up -d'
-}
-  }
+    steps {
+      echo 'Deploying to Dev Environment with Docker Compose'
+      sh 'docker-compose up -d'
+     }
+   }
 
   }
   tools {
